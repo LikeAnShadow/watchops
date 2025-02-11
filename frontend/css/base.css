@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Montserrat-Black';
+    font-style: normal;
+    src: url(../assets/fonts/Montserrat-Black.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+
+:root {
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+}
+
+body {
+    margin: 0px;
+}
+
+nav {
+    padding: 20px;
+    background-color: var(--bs-gray-100);
+    border-bottom: 1px solid var(--bs-gray-300);
+}
+
+h1 {
+    font-family: 'Montserrat-Black';
+    font-size: 2em;
+}
+
+.h1-no-margin {
+    margin: 0px;
+}
