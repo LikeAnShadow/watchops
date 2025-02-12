@@ -1,6 +1,6 @@
 # Frontend für watchops
 - Made by Erik Michl und Loris Els
-- Version 0.01
+- Version 0.02
 ## Technologien
 - Plain HTML, CSS, JavaScript
 ## Struktur
@@ -32,5 +32,9 @@
 │   └── base.css
 ├── html
 │   └── startseite.html
-└── README.md
+├── README.md
+└── update_doku.py
+
+6 directories, 23 files
 ```
+
