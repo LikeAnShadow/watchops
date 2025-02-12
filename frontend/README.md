@@ -1,6 +1,6 @@
 # Frontend für watchops
 - Made by Erik Michl und Loris Els
-- Version 0.02
+- Version 0.03
 ## Technologien
 - Plain HTML, CSS, JavaScript
 ## Struktur
@@ -27,7 +27,10 @@
 │   │   ├── Montserrat-ThinItalic.ttf
 │   │   └── Montserrat-Thin.ttf
 │   └── images
-│       └── favicon.png
+│       ├── favicon.png
+│       ├── minus.png
+│       ├── plus.png
+│       └── stift.png
 ├── css
 │   └── base.css
 ├── html
@@ -35,6 +38,6 @@
 ├── README.md
 └── update_doku.py
 
-6 directories, 23 files
+6 directories, 26 files
 ```
 
