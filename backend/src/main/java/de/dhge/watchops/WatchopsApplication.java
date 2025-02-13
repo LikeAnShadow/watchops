@@ -23,8 +23,8 @@ public class WatchopsApplication {
 
 @Bean
 public DataSource dataSource() {
-    Path db_file = Path.of("backend/database/db.sqlite");
-    Path schema_file = Path.of("backend/database/schema.sqlite");
+    Path db_file = Path.of("/opt/database/db.sqlite");
+    Path schema_file = Path.of("/opt/database/schema.sqlite");
         File f = new File(db_file.toAbsolutePath().toString());
         if(!f.exists()) { 
             try {
