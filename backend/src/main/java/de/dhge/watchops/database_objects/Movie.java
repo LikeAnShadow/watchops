@@ -10,16 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "movie")
 public class Movie {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private String title;
-    private int genre_id;
     private int director_id;
     private int year;
     private int rating;
@@ -30,10 +27,9 @@ public class Movie {
     private Set<Genre> genres;
 
 
-
-    public Movie(String title, int genre_id, int director_id, int year, int rating, String description){
+    public Movie(){}
+    public Movie(String title, int director_id, int year, int rating, String description){
         this.title = title;
-        this.genre_id = genre_id;
         this.director_id = director_id;
         this.year = year;
         this.rating = rating;
@@ -43,9 +39,6 @@ public class Movie {
 
     public String getTitle() {
         return title;
-    }
-    public int getGenre_id() {
-        return genre_id;
     }
     public int getDirector_id() {
         return director_id;
@@ -64,9 +57,6 @@ public class Movie {
     }
     public void setTitle(String title) {
         this.title = title;
-    }
-    public void setGenre_id(int genre_id) {
-        this.genre_id = genre_id;
     }
     public void setDirector_id(int director_id) {
         this.director_id = director_id;

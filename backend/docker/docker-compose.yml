@@ -1,0 +1,20 @@
+services:
+
+  db:
+    container_name: watchops_db
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: test
+  watchopsB:
+    image: watchops_backend
+    #restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: watchops_db
+      DB_USER: root
+      DB_PASSWORD: test
+      DB_NAME: watchops

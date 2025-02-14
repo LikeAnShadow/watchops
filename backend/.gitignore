@@ -1,2 +1,3 @@
 docker/backend.jar
+docker/schema.sqlite
 target/**
