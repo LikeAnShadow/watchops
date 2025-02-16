@@ -1,0 +1,26 @@
+name: Run Python-Script on Commit in Frontend Branch
+
+on:
+  push:
+    branches:
+      - 'frontend'
+
+  # Allows running this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5.4.0
+        with:
+          python-version: 3.13
+
+      - name: Run Python Script
+        run: python frontend/update_doku.py
+          
