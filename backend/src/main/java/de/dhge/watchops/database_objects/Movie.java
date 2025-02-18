@@ -1,15 +1,12 @@
 package de.dhge.watchops.database_objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Movie {
@@ -22,9 +19,8 @@ public class Movie {
     private int rating;
     private String description;
 
-        @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-        @JoinTable(name = "MovieGenre", joinColumns = @JoinColumn(name = "movie_id"),  inverseJoinColumns = @JoinColumn(name = "genre_id"))
-    private Set<Genre> genres;
+    //@OneToMany(mappedBy = "movie")
+    //Set<MovieGenre> genres;
 
 
     public Movie(){}
@@ -68,6 +64,9 @@ public class Movie {
         this.rating = rating;
     }
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description; 
     }
+    //public Set<Genre> getGenres() {
+    //    return genres.stream().map(MovieGenre::getGenre).collect(Collectors.toSet());
+    //}
 }
