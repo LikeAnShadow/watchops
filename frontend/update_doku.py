@@ -1,6 +1,7 @@
 import subprocess, re
 
 # Versionsnummer hochzählen
+output = ""
 with open("README.md", 'r', encoding='utf-8') as file:
     for line in file:
         match = re.search(r'- Version \s*(\d+\.\d+)', line)
