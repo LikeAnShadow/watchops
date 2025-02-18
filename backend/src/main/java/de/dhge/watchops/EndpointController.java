@@ -37,18 +37,17 @@ public class EndpointController {
         return movies;
     }  
 
+    @PostMapping("/movies") 
+    public Movie addMovie(@RequestBody Movie movie) {
+        movieRepository.save(movie);
+        return movie;
+    }
     @GetMapping("/movies/{id}")
     public Movie getMovie(@PathVariable int id) {
         Movie movie = movieRepository.findById(id);
         return movie;
     }
 
-
-    @PostMapping("/movies") 
-    public Movie addMovie(@RequestBody Movie movie) {
-        movieRepository.save(movie);
-        return movie;
-    }
     @PutMapping("/movies/{id}")
     public Movie updateMovie(@PathVariable int id, @RequestBody Movie updatedMovie) {
         Movie movie = movieRepository.findById(id);
@@ -58,6 +57,7 @@ public class EndpointController {
         movie.setDescription(updatedMovie.getDescription());
         movie.setRating(updatedMovie.getRating());
         movie.setDirector_id(updatedMovie.getDirector_id());
+
         movieRepository.save(movie);
         return movie;
     }
@@ -65,14 +65,65 @@ public class EndpointController {
     public void deleteMovie(@PathVariable int id) {
         movieRepository.deleteById(id);
     }
+
+
     @GetMapping("/directors")
     public List<Director> getDirectors() {
         List<Director> directors = directorRepository.findAll();
         return directors;
     }
+    @PostMapping("/directors")
+    public Director addDirector(@RequestBody Director director) {
+        directorRepository.save(director);
+        return director;
+    }
+
+    @GetMapping("/directors/{id}")
+    public Director getDirector(@PathVariable int id) {
+        Director director = directorRepository.findById(id);
+        return director;
+    }
+    @PutMapping("/directors/{id}")
+    public Director updateDirector(@PathVariable int id, @RequestBody Director updatedDirector) {
+        Director director = directorRepository.findById(id);
+
+        director.setSurname(updatedDirector.getSurname());
+        director.setFirstname(updatedDirector.getFirstname());
+
+        return director;
+    }
+    @DeleteMapping("/directors/{id}")
+    public void deleteDirector(@PathVariable int id) {
+        directorRepository.deleteById(id);
+    }
+
+
     @GetMapping("/genres")
     public List<Genre> getGenres() {
         List<Genre> genres = genreRepository.findAll();
         return genres;
+    }
+    @PostMapping("/genres")
+    public Genre addGenre(@RequestBody Genre genre) {
+        genreRepository.save(genre);
+        return genre;
+    }
+
+    @GetMapping("/genres/{id}")
+    public Genre getGenre(@PathVariable int id) {
+        Genre genre = genreRepository.findById(id);
+        return genre;
+    }
+    @PutMapping("/genres/{id}")
+    public Genre updateGenre(@PathVariable int id, @RequestBody Genre updatedGenre) {
+        Genre genre = genreRepository.findById(id);
+
+        genre.setName(updatedGenre.getName());
+        
+        return genre;
+    }
+    @DeleteMapping("/genres/{id}")
+    public void deleteGenre(@PathVariable int id) {
+        genreRepository.deleteById(id);
     }
 }

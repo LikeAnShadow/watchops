@@ -6,11 +6,14 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface DirectorRepository extends CrudRepository<Director, Long> {
     List<Director> findAll();
+    
+    public Director findById(int id);
     public Director findByFirstnameAndSurname(String firstname, String surname);
     public Director findByFirstname(String firstname);
     public Director findBySurname(String surname);
+
     public void deleteByFirstnameAndSurname(String firstname, String surname);
     public void deleteByFirstname(String firstname);
     public void deleteBySurname(String surname);
-    
+    public void deleteById(int id);
 }

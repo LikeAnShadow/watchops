@@ -13,6 +13,8 @@ public class Director {
     private String firstname;
     private String surname;
     
+    public Director() {
+    }
     public Director(String firstname, String surname) {
         this.firstname = firstname;
         this.surname = surname;
@@ -25,5 +27,11 @@ public class Director {
     }
     public String getSurname() {
         return surname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

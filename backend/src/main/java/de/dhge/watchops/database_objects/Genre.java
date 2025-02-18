@@ -15,11 +15,16 @@ public class Genre {
         this.name = name;
     } // JPA needs a default constructor
 
-
+    public Genre() {
+    }
     public String getName() {
         return name;
     }
     public int getId() {
         return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
