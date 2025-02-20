@@ -39,9 +39,11 @@
 │   │   └── api.js
 │   └── update_doku.py
 └── testfolder
-    └── testsubfolder
-        └── test.txt
+    ├── testsubfolder
+    │   └── test.txt
+    └── testsubfolder2
+        └── test2.txt
 
-11 directories, 30 files
+12 directories, 31 files
 -e ```
 
