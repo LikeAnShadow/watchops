@@ -1,29 +1,31 @@
-# watchops## Struktur
+-e ## Struktur
 ```
 .
+├── README.md
 ├── backend
 │   └── README.md
 ├── frontend
+│   ├── README.md
 │   ├── assets
 │   │   ├── fonts
-│   │   │   ├── Montserrat-BlackItalic.ttf
 │   │   │   ├── Montserrat-Black.ttf
-│   │   │   ├── Montserrat-BoldItalic.ttf
+│   │   │   ├── Montserrat-BlackItalic.ttf
 │   │   │   ├── Montserrat-Bold.ttf
-│   │   │   ├── Montserrat-ExtraBoldItalic.ttf
+│   │   │   ├── Montserrat-BoldItalic.ttf
 │   │   │   ├── Montserrat-ExtraBold.ttf
-│   │   │   ├── Montserrat-ExtraLightItalic.ttf
+│   │   │   ├── Montserrat-ExtraBoldItalic.ttf
 │   │   │   ├── Montserrat-ExtraLight.ttf
+│   │   │   ├── Montserrat-ExtraLightItalic.ttf
 │   │   │   ├── Montserrat-Italic.ttf
-│   │   │   ├── Montserrat-LightItalic.ttf
 │   │   │   ├── Montserrat-Light.ttf
-│   │   │   ├── Montserrat-MediumItalic.ttf
+│   │   │   ├── Montserrat-LightItalic.ttf
 │   │   │   ├── Montserrat-Medium.ttf
+│   │   │   ├── Montserrat-MediumItalic.ttf
 │   │   │   ├── Montserrat-Regular.ttf
-│   │   │   ├── Montserrat-SemiBoldItalic.ttf
 │   │   │   ├── Montserrat-SemiBold.ttf
-│   │   │   ├── Montserrat-ThinItalic.ttf
-│   │   │   └── Montserrat-Thin.ttf
+│   │   │   ├── Montserrat-SemiBoldItalic.ttf
+│   │   │   ├── Montserrat-Thin.ttf
+│   │   │   └── Montserrat-ThinItalic.ttf
 │   │   └── images
 │   │       ├── favicon.png
 │   │       ├── minus.png
@@ -35,10 +37,11 @@
 │   │   └── startseite.html
 │   ├── js
 │   │   └── api.js
-│   ├── README.md
 │   └── update_doku.py
-└── README.md
+└── testfolder
+    └── testsubfolder
+        └── test.txt
 
-9 directories, 29 files
-```
+11 directories, 30 files
+-e ```
 
