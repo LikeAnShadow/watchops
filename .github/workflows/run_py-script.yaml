@@ -38,5 +38,5 @@ jobs:
           commit_message: Automated Update of README file after a Commit
           commit_user_name: Watchops-Update-Bot
           commit_user_email: watchops-update-bot@example.org
-          tagging_message: 'updated readme via update_doku.py script'
+          tagging_message: updated readme via update_doku.py script
           
