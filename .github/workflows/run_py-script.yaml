@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'frontend'
+    tags-ignore:
+      - 'updated readme via update_doku.py script'
 
   # Allows running this workflow manually from the Actions tab
   workflow_dispatch:
@@ -12,9 +14,15 @@ on:
 jobs:
   run-python:
     runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+      contents: write
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup Python
         uses: actions/setup-python@v5.4.0
@@ -23,4 +31,12 @@ jobs:
 
       - name: Run Python Script
         run: python frontend/update_doku.py
+
+      - name: Commit Changes to README file
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Automated Update of README file after a Commit
+          commit_user_name: Watchops-Update-Bot
+          commit_user_email: watchops-update-bot@example.org
+          tagging_message: 'updated readme via update_doku.py script'
           
