@@ -14,13 +14,18 @@
         <!-- Navbar -->
         <nav>
             <h1 class="h1-no-margin">watchops</h1>
-            <input class="input-round" type="text" placeholder="Film suchen...">
+            <div class="nav-search-container">
+                <img class="nav-search-img" src="../assets/images/magnifier.png">
+                <input class="input-round" type="text" placeholder="Film suchen...">
+            </div>
+            
         </nav>
     </header>
     <main>
         <div id="movielist" class="movielist">
-            <div class="movielist-item movielist-add"><img class="nav-item-img" src="../assets/images/plus.png"></div>
+            <div class="movielist-add"><img class="movielist-add-img" src="../assets/images/plus.png"></div>
         </div>
+        <div id="main-content" class="main-content"></div>
     </main>
     <footer></footer>
     <script src="../js/api.js"></script>

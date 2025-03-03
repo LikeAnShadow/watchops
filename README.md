@@ -1,1 +1,4 @@
-geh in die andere Readme aka. frontend/README.md
+# watchops
+- Teammitglieder: Tobias Klaßen, Adrian Heier, Erik Michl, Loris Els
+## Architektur
+![](docs/Entwurf.png)

@@ -19,10 +19,8 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --main-900: #68904D;
-    --second-900: #14471E;
-    --third-900: #C8D2D1;
-    --button-900: #EE9B01;
+    --second-900: #ffed4b;
+    --second-800: rgba(143, 135, 67, 0.603);
     --error-900: #DA6A00;
 }
 
@@ -30,25 +28,31 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0px;
+}
+
 html, body, main{
     height: 100%;
 }
 
-body {
-    margin: 0px;
+main {
+    display: flex;
 }
+
+
 
 nav {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: var(--main-900);
-    border-bottom: 1px solid var(--bs-gray-600);
+    background-color: var(--bs-gray-900);
 }
 
 h1 {
     font-family: 'Montserrat-Black';
     font-size: 2em;
+    color: white;
 }
 
 input {
@@ -60,7 +64,7 @@ input {
 input:focus, input:hover {
     outline: none;
     border: solid 1px var(--bs-gray-900);
-    box-shadow: 0px 0px 20px 5px var(--bs-gray-400);
+    box-shadow: 0px 0px 10px 2px var(--second-900);
     transform: scale(1.015);
 }
 
@@ -81,44 +85,63 @@ input:focus, input:hover {
     align-items: center;
 }
 
-.nav-item-img{
+.nav-search-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-search-img{
     width: 30px;
     height: 30px;
-    transition-duration: 0.2s;
 }
 
-.nav-item-img:hover {
-    transform: scale(1.25);
-}
-
-.nav-item-img:active {
-    transform: scale(0.75);
-}
 /*----------------------------------------------*/
 .movielist {
     width: 25%;
-    background-color: var(--bs-gray-100);
+    background-color: var(--bs-gray-700);
     height: 100%;
-    border-right: 1px solid var(--bs-gray-600);
 }
 
 .movielist-item {
     padding: 20px;
     font-family: 'Montserrat';
+    color: white;
     font-size: 1.5em;
     transition-duration: 0.2s;
 }
 
 .movielist-item:hover {
-    color: blue;
+    color: var(--second-900);
 }
 
 .movielist-item:active {
-    background-color: var(--bs-gray-400);
+    background-color: var(--second-800);
 }
 
 .movielist-add{
     display: flex;
+    padding: 20px;
     justify-content: center;
-    background-color: var(--button-900);
+    background-color: var(--bs-gray-800);
+}
+
+.movielist-add-img{
+    width: 30px;
+    height: 30px;
+    transition-duration: 0.2s;
+}
+
+.movielist-add-img:hover {
+    transform: scale(1.25);
+}
+
+.movielist-add-img:active {
+    transform: scale(0.75);
+}
+
+/*-------------------------Main-Content---------------*/
+.main-content {
+    width: 100%;
+    background-color: var(--bs-gray-600);
 }
