@@ -1,6 +1,6 @@
 # Frontend für watchops
 - Made by Erik Michl und Loris Els
-- Version 0.04
+- Version 0.05
 ## Technologien
 - Plain HTML, CSS, JavaScript
 ## Struktur
