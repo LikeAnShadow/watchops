@@ -11,18 +11,29 @@ async function getAllMovies() {
             throw new Error(`Response status: ${response.status}`);
         }
         const json = await response.json();
-        addMovieToList(json.name);
+        return json;
     } catch (error) {
         console.log(error.message);
     }
+    return null;
 }
 
 // Funktion die Film in Frontendliste hinzufügt
-function addMovieToList(titel){
-    const newItem = document.createElement('div');
-    newItem.textContent = titel;
-    newItem.classList.add("movielist-item");
-    document.getElementById("movielist").appendChild(newItem);
+async function addMoviesToList(){
+    try {
+        const data = await getAllMovies();
+        if(!data) return;
+        
+        for(let i = 0; i<data.length; i++) {
+            const newItem = document.createElement('div');
+            newItem.textContent = data[i].title;
+            newItem.classList.add("movielist-item");
+            document.getElementById("movielist").appendChild(newItem);
+        }
+    } catch(error) {
+        return;
+    }
+    
 }
 
-getAllMovies();
+addMoviesToList();

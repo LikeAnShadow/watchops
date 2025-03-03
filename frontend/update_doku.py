@@ -1,18 +1,20 @@
 import subprocess, re
 
+FILE = "frontend/README.md"
+
 # Versionsnummer hochzählen
 output = ""
-with open("README.md", 'r', encoding='utf-8') as file:
+with open(FILE, 'r', encoding='utf-8') as file:
     for line in file:
         match = re.search(r'- Version \s*(\d+\.\d+)', line)
         if match:
             output = float(match.group(1)) + 0.01
             break
-subprocess.run(f"sed -i '/Version/c- Version {output}' README.md", shell=True)
 
-# Datei-tree aktualisieren
-subprocess.run("sed -i '/Struktur/,$d' README.md", shell=True) # alten tree löschen
-subprocess.run("echo -e '## Struktur\n```' >> README.md", shell=True)
-subprocess.run("tree >> README.md", shell=True)
-subprocess.run("echo -e '```\n' >> README.md", shell=True)
+command_string = (f"sed -i '/Version/c- Version {output}' {FILE}; ", # Versionsnummer ersetzen
+                   "sed -i '/Struktur/,$d' {FILE}; ",
+                   "echo -e '## Struktur\n```' >> {FILE}; ",
+                   "tree >> {FILE}; ",
+                   "echo -e '```\n' >> {FILE}")
+subprocess.run(command_string, shell=True)
 
