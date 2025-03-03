@@ -8,7 +8,7 @@ with open(FILE, 'r', encoding='utf-8') as file:
     for line in file:
         match = re.search(r'- Version \s*(\d+\.\d+)', line)
         if match:
-            output = float(match.group(1)) + 0.01
+            output = round(float(match.group(1)) + 0.01,2)
             break
 
 command_string = (f"sed -i '/Version/c- Version {output}' {FILE}; ", # Versionsnummer ersetzen
