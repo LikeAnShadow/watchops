@@ -18,3 +18,4 @@ services:
       DB_USER: root
       DB_PASSWORD: test
       DB_NAME: watchops
+      SUBPATH: /api
