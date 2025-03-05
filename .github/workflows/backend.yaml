@@ -24,6 +24,7 @@ jobs:
         ref: ${{github.head_ref}}
     - name: build container
       run: |
+        pwd
         docker build -t watchops_backend backend/docker
         docker images
 
