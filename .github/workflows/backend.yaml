@@ -22,9 +22,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{github.head_ref}}
-    - name: prepare runner
-      run: |
-        sudo apt-get install docker.io
     - name: build container
       run: |
         docker build -t watchops_backend watchops/backend/docker
