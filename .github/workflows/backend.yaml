@@ -24,7 +24,7 @@ jobs:
         ref: ${{github.head_ref}}
     - name: build container
       run: |
-        docker build -t watchops_backend watchops/backend/docker
+        docker build -t watchops_backend backend/docker
         docker images
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
