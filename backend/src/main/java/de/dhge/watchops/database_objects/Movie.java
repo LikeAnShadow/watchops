@@ -1,14 +1,14 @@
 package de.dhge.watchops.database_objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "movies")
 public class Movie {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -19,12 +19,9 @@ public class Movie {
     private int rating;
     private String description;
 
-    //@OneToMany(mappedBy = "movie")
-    //Set<MovieGenre> genres;
-
 
     public Movie(){}
-    public Movie(String title, int director_id, int year, int rating, String description){
+    public Movie(String title, int director_id, int year, int rating, String description, Set<Genre> genres) {
         this.title = title;
         this.director_id = director_id;
         this.year = year;
@@ -66,7 +63,4 @@ public class Movie {
     public void setDescription(String description) {
         this.description = description; 
     }
-    //public Set<Genre> getGenres() {
-    //    return genres.stream().map(MovieGenre::getGenre).collect(Collectors.toSet());
-    //}
 }

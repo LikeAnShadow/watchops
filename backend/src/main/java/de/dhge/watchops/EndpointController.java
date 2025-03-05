@@ -17,9 +17,7 @@ import de.dhge.watchops.database_objects.DirectorRepository;
 import de.dhge.watchops.database_objects.Genre;
 import de.dhge.watchops.database_objects.GenreRepository;
 import de.dhge.watchops.database_objects.Movie;
-import de.dhge.watchops.database_objects.MovieGenreRepository;
 import de.dhge.watchops.database_objects.MovieRepository;
-import de.dhge.watchops.database_objects.MovieGenre;
 
 @RequestMapping("/api")
 @RestController
@@ -34,9 +32,6 @@ public class EndpointController {
 
     @Autowired
     private GenreRepository genreRepository;
-    
-    @Autowired
-    private MovieGenreRepository movieGenreRepository;
     @GetMapping("/movies")
     public List<Movie> getMovies() {
         List<Movie> movies = movieRepository.findAll();
@@ -71,7 +66,7 @@ public class EndpointController {
     public void deleteMovie(@PathVariable int id) {
         movieRepository.deleteById(id);
     }
-    @GetMapping("/movies/{id}/genres")
+    /*@GetMapping("/movies/{id}/genres")
     public List<Genre> getGenresByMovie(@PathVariable int id) {
         List<Genre> genres = movieGenreRepository.findAllByMovieId(id);
         return genres;
@@ -83,7 +78,7 @@ public class EndpointController {
     @DeleteMapping("/movies/{id}/genres")
     public void removeGenreFromMovie(@PathVariable int id, @RequestBody Genre genre) {
         movieGenreRepository.deleteByMovieIdAndGenreId(id, genre.getId());
-    }
+    }*/
 
 
     @GetMapping("/directors")
@@ -145,9 +140,9 @@ public class EndpointController {
     public void deleteGenre(@PathVariable int id) {
         genreRepository.deleteById(id);
     }
-    @GetMapping("/genres/{id}/movies")
+    /*@GetMapping("/genres/{id}/movies")
     public List<Movie> getMoviesByGenre(@PathVariable int id) {
         List<Movie> movies = movieGenreRepository.findAllByGenreId(id);
         return movies;
-    }
+    }*/
 }

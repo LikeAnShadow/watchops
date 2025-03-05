@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -v DEVENV ]; then
+if [ -v INIT ]; then
     echo "Running in development mode"
     java -jar /app.jar
-else    
+else
     echo "Running in production mode"
     export SPRING_JPA_GENREATE_DDL=false
     export SPRING_JPA_HIBERNATE_DDL_AUTO=none

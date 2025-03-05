@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build Jar and Docker Container, run it
+name: Create Docker Container
 
 on:
   push:
@@ -15,23 +15,20 @@ on:
     branches: [ "backend" ]
 
 jobs:
-  buildJava:
-    name: Build Java Jar and Docker Container
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
       with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file backend/pom.xml
-      
-    - name: Run Dockerfile
-      run: docker build -t watchops_backend backend/docker
+        ref: ${{github.head_ref}}
+    - name: prepare runner
+      run: |
+        sudo apt-get install docker.io
+    - name: build container
+      run: |
+        docker build -t watchops_backend watchops/backend/docker
+        docker images
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
