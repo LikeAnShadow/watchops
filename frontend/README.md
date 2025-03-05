@@ -2,7 +2,7 @@
 - Made by Erik Michl und Loris Els
 - Version 0.07
 ## Technologien
-- Plain HTML, CSS, JavaScript
+- Next.js, React, Node.js
 ## Struktur
 ```
 .

@@ -40,8 +40,6 @@ main {
     display: flex;
 }
 
-
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -91,11 +89,6 @@ input:focus, input:hover {
     align-items: center;
 }
 
-.nav-search-img{
-    width: 30px;
-    height: 30px;
-}
-
 /*----------------------------------------------*/
 .movielist {
     width: 25%;
@@ -126,17 +119,17 @@ input:focus, input:hover {
     background-color: var(--bs-gray-800);
 }
 
-.movielist-add-img{
+.movielist-add-img, .nav-search-img{
     width: 30px;
     height: 30px;
     transition-duration: 0.2s;
 }
 
-.movielist-add-img:hover {
+.movielist-add-img:hover, .nav-search-img:hover {
     transform: scale(1.25);
 }
 
-.movielist-add-img:active {
+.movielist-add-img:active, .nav-search-img:active {
     transform: scale(0.75);
 }
 

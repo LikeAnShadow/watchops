@@ -1,0 +1,12 @@
+.movielist_container{
+    width: 25%;
+    background-color: var(--bs-gray-700);
+    height: 100%;
+}
+
+.movielist_add_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--bs-gray-800);
+}

@@ -1,0 +1,4 @@
+.movie_container {
+    width: 100%;
+    background-color: var(--bs-gray-600);
+}
