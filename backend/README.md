@@ -1,16 +1,46 @@
 # Watchops Backend
 
-Alle folgenden Befehle gehen davon aus, das man im Wurzelverzeichnis des Repositorys ist
+Das Watchops Backend besteht aus einer SpringBoot-Application und einer Datenbank. Diese werden mithilfe von einer Compose-Datei gepullt und gestartet.
 
-## Bauen
 
-### JAR
-mvn -f backend/pom.xml package
+!!! Noch WIP, Entrypoint fehlt.
 
-### Docker Container
-
-docker build -t watchops_backend backend/docker
-
-## Starten
+## Docker-Compose Datei
 
 docker compose --file backend/docker/docker-compose.yml up watchopsB
+
+```yaml
+services:
+
+  db:
+    container_name: watchops_db
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: test
+  watchopsB:
+    image: "ghcr.io/likeanshadow/watchops:backend"
+    #restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: watchops_db
+      DB_USER: root
+      DB_PASSWORD: test
+      DB_NAME: watchops
+      SUBPATH: /api
+```
+
+## Starten des Backends
+
+```bash
+docker compose --file backend/docker/docker-compose.yml run --service-ports watchopsB
+```
+
+oder
+
+```bash
+docker-compose --file backend/docker/docker-compose.yml run --service-ports watchopsB
+```
