@@ -1,5 +1,8 @@
 package de.dhge.watchops;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -33,9 +36,17 @@ public class EndpointController {
     @Autowired
     private GenreRepository genreRepository;
     @GetMapping("/movies")
-    public List<Movie> getMovies() {
+    public List<Map<String, Object>> getMovies() {
         List<Movie> movies = movieRepository.findAll();
-        return movies;
+    List<Map<String, Object>> movieList = movies.stream()
+        .map(movie -> {
+            Map<String, Object> movieMap = new HashMap<>();
+            movieMap.put("id", movie.getId());
+            movieMap.put("title", movie.getTitle());
+            return movieMap;
+        })
+        .collect(Collectors.toList());
+        return movieList;
     }  
 
     @PostMapping("/movies") 

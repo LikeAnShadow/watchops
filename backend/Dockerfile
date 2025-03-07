@@ -1,4 +1,5 @@
 FROM alpine:3.21
+
 RUN apk add openjdk21-jdk bash mariadb-client maven
 # Go to the build directory
 WORKDIR /build

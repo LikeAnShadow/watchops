@@ -7,12 +7,12 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: test
   watchopsB:
-    image: "ghcr.io/likeanshadow/watchops:backend"
+    image: "ghcr.io/likeanshadow/watchops"
     #restart: always
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      - db 
     environment:
       DB_HOST: watchops_db
       DB_USER: root
