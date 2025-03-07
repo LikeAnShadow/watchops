@@ -1,0 +1,4 @@
+docker/backend.jar
+docker/schema.sqlite
+docker/docker-compose-test.yml
+target/**
