@@ -1,5 +1,6 @@
 FROM alpine:3.21
 
+# Install the necessary build tools
 RUN apk add openjdk21-jdk bash mariadb-client maven
 # Go to the build directory
 WORKDIR /build
@@ -10,15 +11,17 @@ COPY ./src ./src
 # Copy the pom.xml file into the container at /build
 COPY ./pom.xml ./pom.xml
 
-# Build the backend and 
+# Build the backend
 RUN mvn clean package -DskipTests
 
 # Switch to the /app directory
 WORKDIR /app
-#RUN cp /build/target/backend-0.0.1-SNAPSHOT.jar /app/backend.jar
 # Delete the /build directory
 RUN rm -rf /build
+# Delete the build tools
 RUN apk del --purge maven openjdk21-jdk
+
+# Install OpenJDK-21 JRE for running the application
 RUN apk add openjdk21-jre
 
 #Define the entrypoint
@@ -27,8 +30,6 @@ RUN apk add openjdk21-jre
 
 # Expose the port the application runs on
 EXPOSE 8080
-
-# Install OpenJDK-21
 
 # Command to run the application
 # ENTRYPOINT [ "/entrypoint.sh" ]
