@@ -8,8 +8,8 @@ import jakarta.persistence.Entity;
 public class MovieGenreId implements java.io.Serializable {
     
     @Column(name = "movie_id")
-    private Integer movieId;
+    private int movieId;
 
     @Column(name = "genre_id")
-    private Integer genreId;
+    private int genreId;
 }

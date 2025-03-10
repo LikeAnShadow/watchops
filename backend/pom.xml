@@ -83,7 +83,7 @@
                         </goals>
                         <configuration>
                                 <sourceFile>target/${project.build.finalName}.jar</sourceFile>
-    							<destinationFile>/app/backend.jar</destinationFile>
+    							<destinationFile>target/backend.jar</destinationFile>
                         </configuration>
                     </execution>
                 </executions>
