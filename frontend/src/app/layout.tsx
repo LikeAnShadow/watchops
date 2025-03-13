@@ -8,7 +8,7 @@ export default function RootLayout() {
       <html lang="de">
         <head>
           <title>watchops</title>
-          <link rel="icon" href="/icon?<generated>" type="image/<generated>" sizes="<generated>"/>
+          <link rel="icon" href="images/icon.png" type="image/png" />
         </head>
         <body>
           <header>
