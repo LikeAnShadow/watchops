@@ -1,6 +1,6 @@
 # Frontend für watchops
 - Made by Erik Michl und Loris Els
-- Version 0.09
+- Version 0.1
 ## Technologien
 - Next.js, React, Node.js
 ## Struktur
