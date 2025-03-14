@@ -1,0 +1,29 @@
+.movielist_container{
+    width: 25%;
+    background-color: var(--bs-gray-700);
+    height: 100%;
+}
+
+.movielist_add_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--bs-gray-800);
+}
+
+.movielist_item {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    transition-duration: 0.2s;
+}
+
+.movielist_item:hover {
+    color: var(--second-900);
+}
+
+.movielist_item:active {
+    background-color: var(--second-800);
+}

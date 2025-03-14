@@ -32,7 +32,7 @@ body {
     margin: 0px;
 }
 
-html, body, main {
+html, body, main, #__next {
     height: 100%;
 }
 
