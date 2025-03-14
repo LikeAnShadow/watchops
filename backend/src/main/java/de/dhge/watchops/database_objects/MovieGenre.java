@@ -15,7 +15,7 @@ public class MovieGenre {
 
     public MovieGenre() {
     }
-    public MovieGenre(MovieGenreId id) {
+    public MovieGenre(MovieGenreId id, Movie movie, Genre genre) {
         this.id = id;
     }
     public MovieGenreId getId() {
@@ -23,6 +23,19 @@ public class MovieGenre {
     }
     public void setId(MovieGenreId id) {
         this.id = id;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+    public Genre getGenre() {
+        return genre;
+    }
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
 
