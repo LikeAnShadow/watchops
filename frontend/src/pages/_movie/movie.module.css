@@ -1,4 +1,41 @@
 .movie_container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     width: 100%;
     background-color: var(--bs-gray-600);
+}
+
+.movie_label, .movie_input, .movie_textarea, .movie_button {
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+}
+
+.movie_label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.movie_input, .movie_textarea, .movie_button {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.movie_textarea {
+    resize: None;
+}
+
+.movie_button {
+    padding: 5px;
+    background-color: var(--primary-300);
+    transition-duration: 0.1s;
+}
+
+.movie_button:hover {
+    background-color: var(--primary-400);
+}
+
+.movie_button:active {
+    transform: rotate(2deg);
 }
